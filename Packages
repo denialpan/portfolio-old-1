@@ -1,0 +1,16 @@
+Package: com.denial.doabarrelwall
+Version: 0.0.1-75+debug
+Architecture: iphoneos-arm
+Maintainer: denial
+Installed-Size: 368
+Depends: mobilesubstrate, preferenceloader, firmware (>= 13.0), com.mrgcgamer.libgcuniversal
+Filename: ./debs/com.denial.doabarrelwall_0.0.1-75+debug_iphoneos-arm.deb
+Size: 52744
+MD5sum: de83c000047820d39256ab56e5d44836
+SHA1: aa242f0cb504b40a2a97853ac54309441fffdb46
+SHA256: 3e51b9f5306beb5054365ad7acf4e2d744e34962939fb61163ee44c2434549e0
+Section: Tweaks
+Description: Cycle through lockscreen and homescreen wallpapers.
+Author: denial
+Name: DoABarrelWall
+
