@@ -4,6 +4,7 @@
 h1 {
     animation: fadeInUp 0.7s;
     animation-fill-mode: forwards;
+    padding-inline: 30px;
 }
 
 //animation properties of all <p>
@@ -12,6 +13,8 @@ p {
     animation: fadeInUp 0.7s;
     animation-delay: 0.5s;
     animation-fill-mode: forwards;
+    padding-bottom: 30px;
+    padding-inline: 30px;
 }
 
 //animation properties of all <span>
@@ -49,10 +52,21 @@ span {
     text-align: left;
     word-wrap: break-word;
     white-space: pre-line;
-    padding-bottom: 30px;
+  
     
     margin: 0 auto;
 
+}
+
+// mobile devices USE (pointer:none), (pointer:coarse) when finished
+@media only screen and (max-width: 1000px) {
+    .home-container {
+        top: 0px;
+    }
+    .center-all-of-this {
+        text-align: center;
+        line-height: 2;
+    }
 }
 
 

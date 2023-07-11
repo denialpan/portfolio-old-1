@@ -27,6 +27,7 @@ function Home() {
 
             <p className='home-description center-all-of-this'> 
 
+                
                 <span><Link to="/about">About</Link></span>
                 <span><Link to="/projects">Projects</Link></span>
                 <span><Link to="/blog">Blog</Link></span>
