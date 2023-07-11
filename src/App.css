@@ -1,5 +1,57 @@
-.App {
-  text-align: center;
+/*entire page*/
+
+html {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    background-color: #000000;
+}
+
+.backgroundImage {
+
+    background-image: url("../src/images/backgroundHome.JPG");
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+
+    position:fixed;
+    bottom: 0%;
+    right: 0%;
+    left: 0%;
+    top: 0%;
+    
+    animation: backgroundFadeIn 2s    
+}
+
+
+a {
+    font-size: 20px;
+    padding-inline: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+}
+
+* {
+    -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+
+@keyframes backgroundFadeIn {
+    from { 
+        opacity: 0;
+        transform: translate(0%, 2%);
+
+    }
+    to { 
+        opacity: 1;
+        transform: translate(0%, 0%);
+    }
 }
 
 
