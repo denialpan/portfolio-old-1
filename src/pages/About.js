@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { motion } from "framer-motion"
 import pfp from '../images/pfp.jpg'
 import './About.scss'
+import Navigation from '../components/Navigation'
 
 function About() {
 
@@ -10,7 +11,18 @@ function About() {
 
         <motion.div className="about-container" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
 
-            <div className='navigation'>
+            <div className='mobile-menu'>
+
+                <Navigation />
+
+            </div>
+
+
+
+
+
+            <div className='desktop-menu'>
+
                 <p>
 
                     <span><Link to="/">Home</Link></span>
@@ -20,6 +32,15 @@ function About() {
                 </p>
 
             </div>
+
+
+
+
+
+
+
+
+
 
 
             <div><img className="pfp" src={pfp} alt="pfp" /></div>

@@ -19,13 +19,10 @@ img {
     text-align: left;
     word-wrap: break-word;
     white-space: pre-line;
-    margin-left: 400px;
+    margin-left: 0px;
     
 }
 
-.navigation {
-    margin-bottom: 50px;
-}
 
 .pfp {
     opacity: 0;
@@ -34,5 +31,49 @@ img {
     float: left;
     display: block;
     border-radius: 50%;
-    margin: 20px;
+    margin-inline: 50px;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+.desktop-menu {
+    display: block;
+}
+
+// mobile devices USE (pointer:none), (pointer:coarse) when finished
+@media only screen and (max-width: 1000px) {
+    .about-container {
+        top: 30px;
+        left: 0%;
+        width: 100%;
+        
+    }
+    .center-all-of-this {
+        text-align: center;
+        line-height: 2;
+    }
+
+    .pfp {
+        opacity: 0;
+        height: 100px;
+        width: 100px;
+        float: left;
+        display: block;
+        border-radius: 50%;
+        margin-inline: 30px; 
+    }
+
+    .mobile-menu {
+        display: block;
+        top: 30px;
+        left: 30px;
+        right: 30px;
+    }
+
+    .desktop-menu {
+        display: none;
+    }
+    
 }
