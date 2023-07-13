@@ -15,7 +15,7 @@ export default function Hamburger({isOpen}) {
                 .hamburger {
                     width: 30px;
                     height: 30px;
-                    padding-left: 2px;
+                    padding-left: 1px;
                     display: flex;
                     justify-content: space-around;
                     flex-flow: column nowrap;

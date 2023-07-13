@@ -14,12 +14,8 @@ function About() {
             <div className='mobile-menu'>
 
                 <Navigation />
-
+                
             </div>
-
-
-
-
 
             <div className='desktop-menu'>
 
@@ -32,16 +28,6 @@ function About() {
                 </p>
 
             </div>
-
-
-
-
-
-
-
-
-
-
 
             <div><img className="pfp" src={pfp} alt="pfp" /></div>
 
