@@ -17,7 +17,7 @@ export default function Navigation() {
 
     return (
         <div>
-            <div className="navigation" >
+            <div className="mobile-nav" >
 
                 <motion.div className="hamburger"
                     onClick={toggleHamburger}
@@ -30,11 +30,11 @@ export default function Navigation() {
 
                         <motion.div
                             initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: 120 }}
+                            animate={{ opacity: 1, height: 230 }}
                             exit={{ opacity: 0, height: 0 }}
                             transition={{ ease: "easeInOut", duration: 1 }}>
 
-                            <ul>
+                            <ul className="menu-items">
 
                                 <li><Link to="/">Home</Link></li>
                                 <li><Link to="/about">About</Link></li>
