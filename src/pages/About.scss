@@ -9,18 +9,18 @@ img {
     left: 20%;
     right: 20%;
     top: 15%;
+    
 }
 
 .about-description {
 
     opacity: 1;
-    font-size: 20px;
-    animation: fadeInUp 0.7s;
+    font-size: 25px;
     text-align: left;
     word-wrap: break-word;
     white-space: pre-line;
-    margin-left: 0px;
-    
+    margin-left: 350px;
+
 }
 
 
@@ -31,7 +31,7 @@ img {
     float: left;
     display: block;
     border-radius: 50%;
-    margin-inline: 50px;
+    margin-left: 45px;
 }
 
 .mobile-menu {
@@ -40,6 +40,33 @@ img {
 
 .desktop-menu {
     display: block;
+    margin-bottom: 30px;
+}
+
+hr.solid {
+    width: 100%;
+    border: 0;
+    margin-block: 30px;
+    margin-left: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.75) 10%, rgba(255, 255, 255, 0.75) 90%, rgba(0, 0, 0, 0) 100%);
+    animation: expandDivider 1.4s ease, dividerFade 2.8s ease;
+}
+
+@keyframes expandDivider {
+    from { 
+        width: 0px;
+    } to {
+        width: 100%;
+    } 
+}
+
+@keyframes dividerFade {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
 }
 
 // mobile devices USE (pointer:none), (pointer:coarse) when finished
@@ -56,14 +83,15 @@ img {
     }
 
     .pfp {
+        float: none;
+        margin: auto;
+        margin-bottom: 30px;
         opacity: 0;
-        height: 150px;
-        width: 150px;
-        float: left;
+        max-width: 75%;
+        height: auto;
+        width: auto\15;
         display: block;
         border-radius: 50%;
-        margin-inline: 30px; 
-        margin-bottom: px;
 
     }
 
@@ -76,6 +104,14 @@ img {
 
     .desktop-menu {
         display: none;
+    }
+    
+    .about-description {
+        margin-left: 0px;
+    }
+
+    p {
+        padding-inline: 7%;
     }
     
 }

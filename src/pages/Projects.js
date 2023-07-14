@@ -16,20 +16,20 @@ function Projects() {
 
             <div className='desktop-menu'>
 
-                <p>
 
-                    <span><Link to="/">Home</Link></span>
-                    <span><Link to="/about">About</Link></span>
-                    <span><Link to="/projects">Projects</Link></span>
-                    <span><Link to="/blog">Blog</Link></span>
-                </p>
+                <span><Link to="/">Home</Link></span>
+                <span><Link to="/about">About</Link></span>
+                <span><Link to="/projects">Projects</Link></span>
+                <span><Link to="/blog">Blog</Link></span>
+
+                <hr class="solid"/>
 
             </div>
 
             <div className='projects-quick-description'>
 
                 <p>
-                    OSHOS
+                    This is a quick description of the multiple projects that I have completed and are in the process of learning. This page will always expand!
                 </p>
 
             </div>
