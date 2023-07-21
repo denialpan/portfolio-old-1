@@ -38,21 +38,7 @@ function About() {
                 <p> sohos </p>
                 <p> sohos </p>
                 <p> sohos </p>
-                <p> sohos </p>
-                <p> sohos </p>
-                <p> sohos </p>
-                <p> sohos </p>
-                <p> sohos </p>
-                <p> sohos </p>
-                <p> sohos </p>
-                <p> sohos </p>
-                <p> sohos </p>
-                <p> sohos </p>
-                <p> sohos </p>
-                <p> sohos </p>
-                <p> sohos </p>
-                <p> sohos </p>
-                <p> sohos </p>
+                
             </div>
 
 
