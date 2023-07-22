@@ -1,16 +1,21 @@
 import React from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 function GBA() {
-  return (
+    return (
 
-    <AnimatePresence>
+        <motion.div 
+            key="GBA"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ ease: "easeInOut", duration: 0.7 }}>
 
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}> GBA </motion.div>
+            <p> GBA GBA GBA GBA GBA GBA GBA GBA </p> 
         
-    </AnimatePresence>
+        </motion.div>
 
-  )
+    )
 }
 
 export default GBA

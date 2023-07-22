@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import { useState } from "react";
 import './Projects.scss'
 
@@ -9,24 +9,24 @@ import Jailbreak from './projectPages/Jailbreak'
 import Blender from './projectPages/Blender'
 import GBA from './projectPages/GBA';
 
-function displayContent(param) {
+function displayContent (param) {
 
     switch (param) {
-        case "Jailbreak":
-            return <Jailbreak />
-        case "Blender":
-            return <Blender />;
+        case "Jailbreak": 
+            return <Jailbreak key="Jailbreak"/>
+        case "Blender": 
+            return <Blender key="Blender"/> 
         case "GBA":
-            return <GBA />;
+            return <GBA key="GBA"/>
         default:
-            return "BOBBY";
+            return "BOBBY"    
     }
 
 }
 
 function Projects() {
 
-    const [projectContent, setProjectContent] = useState("Jailbreak");
+    const [projectContent, setProjectContent] = useState();
 
     return (
         <motion.div className='projects-container' initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
@@ -34,7 +34,7 @@ function Projects() {
             <div className='mobile-menu'>
 
                 <Navigation />
-                
+
             </div>
 
             <div className='desktop-menu'>
@@ -45,7 +45,7 @@ function Projects() {
                 <span><Link to="/projects">Projects</Link></span>
                 <span><Link to="/blog">Blog</Link></span>
 
-                <hr class="solid"/>
+                <hr class="solid" />
 
             </div>
 
@@ -58,9 +58,9 @@ function Projects() {
             </div>
 
             <div className='projects-sidebar'>
-                
+
                 <p onClick={() => setProjectContent("Jailbreak")}> Jailbreak </p>
-                
+
                 <p onClick={() => setProjectContent("Blender")}> Blender </p>
 
                 <p onClick={() => setProjectContent("GBA")}> GBA Game </p>
@@ -69,12 +69,14 @@ function Projects() {
             </div>
 
             <div className='projects-display-container'>
-                
-                {displayContent(projectContent)}
-                
+                <AnimatePresence mode="wait">
+                    
+                    {displayContent(projectContent)}
+
+                </AnimatePresence>
             </div>
 
-            
+
 
         </motion.div>
     )

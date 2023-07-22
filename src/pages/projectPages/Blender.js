@@ -1,16 +1,21 @@
 import React from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 function Blender() {
-  return (
+    return (
 
-    <AnimatePresence>
+        <motion.div 
+            key="Blender"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ ease: "easeInOut", duration: 0.7 }}>
 
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}> Blender </motion.div>
+            <p> Blender Blender Blender Blender Blender Blender Blender Blender Blender Blender Blender Blender Blender Blender Blender  </p>
 
-    </AnimatePresence>
+        </motion.div>
 
-  )
+    )
 }
 
 export default Blender

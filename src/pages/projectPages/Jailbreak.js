@@ -1,19 +1,19 @@
 import React from 'react'
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 
 function Jailbreak() {
     return (
 
-        <AnimatePresence>
+        <motion.div 
+            key="Jailbreak"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ ease: "easeInOut", duration: 0.7 }}>
 
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}> 
-            
-                <p> Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak </p>
-            
-             </motion.div>
+            <p> Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak </p>
 
-        </AnimatePresence>
-
+        </motion.div>
 
     )
 }
