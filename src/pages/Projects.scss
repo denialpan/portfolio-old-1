@@ -68,7 +68,9 @@
         width: 230px;
         margin-inline: auto;
         border-radius: 5px;
-        
+        animation: fadeInUp 1.4s;
+        animation-delay: 0s;
+        animation-fill-mode: forwards;
     }
 
     .menu-dropdown-items {
