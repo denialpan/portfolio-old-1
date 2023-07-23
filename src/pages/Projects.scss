@@ -21,6 +21,13 @@
 
 }
 
+.projects-sidebar p {
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+
 .projects-display-container {
 
     opacity: 1;
@@ -86,4 +93,12 @@
     }
 
 
+}
+
+@keyframes itemHover {
+    from {
+        padding: 0px;
+    } to {
+        padding: 5px;
+    }
 }

@@ -65,14 +65,14 @@ function Projects() {
 
             <div className='projects-quick-description'>
                 <p>
-                    This is a quick description of the multiple projects that I have completed and are in the process of learning. This page will always expand!
+                    This page lists current projects that I have finished or am currently working on. Select each one below to learn more!
                 </p>
             </div>
 
             <div className='projects-sidebar'>
-                <p onClick={() => setProjectContent("iOS Tweak Development")}> iOS Tweak Development </p>
-                <p onClick={() => setProjectContent("Blender")}> Blender </p>
-                <p onClick={() => setProjectContent("GBA")}> GBA Game </p>
+                <motion.p whileHover={{ scale: 1.07, backgroundColor: "rgba(255,255,255,0.1)" }} whileTap={{ scale: 0.97 }} onClick={() => setProjectContent("iOS Tweak Development")}> iOS Tweak Development </motion.p>
+                <motion.p whileHover={{ scale: 1.07, backgroundColor: "rgba(255,255,255,0.1)" }} whileTap={{ scale: 0.97 }} onClick={() => setProjectContent("Blender")}> Blender </motion.p>
+                <motion.p whileHover={{ scale: 1.07, backgroundColor: "rgba(255,255,255,0.1)" }} whileTap={{ scale: 0.97 }} onClick={() => setProjectContent("GBA")}> GBA Game </motion.p>
             </div>
 
             <div className='projects-dropdown-menu'>
