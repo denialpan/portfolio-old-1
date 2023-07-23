@@ -1,21 +1,21 @@
 import React from 'react'
 import { motion } from "framer-motion"
 
-function Jailbreak() {
+function Tweak() {
     return (
 
         <motion.div 
-            key="Jailbreak"
+            key="Tweak"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ ease: "easeInOut", duration: 0.7 }}>
 
-            <p> Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak Jailbreak </p>
+            <p> iOS Tweak iOS Tweak iOS Tweak iOS Tweak iOS Tweak iOS Tweak iOS Tweak iOS Tweak </p>
 
         </motion.div>
 
     )
 }
 
-export default Jailbreak
+export default Tweak
