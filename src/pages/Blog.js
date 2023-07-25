@@ -1,35 +1,19 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import Navigation from '../components/Navigation'
+import { motion } from 'framer-motion'
+import NavigationMobile from '../components/NavigationMobile'
+import NavigationDesktop from '../components/NavigationDesktop'
 import './Blog.scss'
 
 
 function Blog() {
 
     return (
-        <div className='blog-container'>
-            <div className='mobile-menu'>
-
-                <Navigation />
-
-            </div>
-
-            <div className='desktop-menu'>
-
-
-
-                <span><Link to="/">Home</Link></span>
-                <span><Link to="/about">About</Link></span>
-                <span><Link to="/projects">Projects</Link></span>
-                <span><Link to="/blog">Blog</Link></span>
-
-
-                <hr class="solid" />
-
-            </div>
+        <motion.div className='blog-container' initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <div className='mobile-menu'> <NavigationMobile /> </div>
+            <div className='desktop-menu'> <NavigationDesktop /> </div>
 
             <h1>under construction</h1>
-        </div>
+        </motion.div>
     )
 }
 

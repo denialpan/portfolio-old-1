@@ -1,10 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from "framer-motion"
 import { useState } from "react";
 import './Projects.scss'
 
-import Navigation from '../components/Navigation'
+import NavigationMobile from '../components/NavigationMobile'
+import NavigationDesktop from '../components/NavigationDesktop';
 import Tweak from './projectPages/Tweak'
 import Blender from './projectPages/Blender'
 import GBA from './projectPages/GBA';
@@ -26,7 +26,7 @@ function displayContent(param) {
 
 function Projects() {
 
-    const [projectContent, setProjectContent] = useState("Select a project...");
+    const [projectContent, setProjectContent] = useState("Tap me");
     const [mobileDropdown, setMobileDropdown] = useState(false);
     const projects = ["iOS Tweak Development", "Blender", "GBA"];
     const menuItems = [];
@@ -45,23 +45,8 @@ function Projects() {
     return (
         <motion.div className='projects-container' initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
 
-            <div className='mobile-menu'>
-
-                <Navigation />
-
-            </div>
-
-            <div className='desktop-menu'>
-
-
-                <span><Link to="/">Home</Link></span>
-                <span><Link to="/about">About</Link></span>
-                <span><Link to="/projects">Projects</Link></span>
-                <span><Link to="/blog">Blog</Link></span>
-
-                <hr class="solid" />
-
-            </div>
+            <div className='mobile-menu'> <NavigationMobile /> </div>
+            <div className='desktop-menu'> <NavigationDesktop /> </div>
 
             <div className='projects-quick-description'>
                 <p>
@@ -70,9 +55,9 @@ function Projects() {
             </div>
 
             <div className='projects-sidebar'>
-                <motion.p whileHover={{ scale: 1.07, backgroundColor: "rgba(255,255,255,0.1)" }} whileTap={{ scale: 0.97 }} onClick={() => setProjectContent("iOS Tweak Development")}> iOS Tweak Development </motion.p>
-                <motion.p whileHover={{ scale: 1.07, backgroundColor: "rgba(255,255,255,0.1)" }} whileTap={{ scale: 0.97 }} onClick={() => setProjectContent("Blender")}> Blender </motion.p>
-                <motion.p whileHover={{ scale: 1.07, backgroundColor: "rgba(255,255,255,0.1)" }} whileTap={{ scale: 0.97 }} onClick={() => setProjectContent("GBA")}> GBA Game </motion.p>
+                <motion.p whileHover={{ cursor: "pointer", scale: 1.07, backgroundColor: "rgba(255,255,255,0.1)" }} whileTap={{ scale: 1 }} onClick={() => setProjectContent("iOS Tweak Development")}> iOS Tweak Development </motion.p>
+                <motion.p whileHover={{ cursor: "pointer", scale: 1.07, backgroundColor: "rgba(255,255,255,0.1)" }} whileTap={{ scale: 1 }} onClick={() => setProjectContent("Blender")}> Blender </motion.p>
+                <motion.p whileHover={{ cursor: "pointer", scale: 1.07, backgroundColor: "rgba(255,255,255,0.1)" }} whileTap={{ scale: 1 }} onClick={() => setProjectContent("GBA")}> GBA Game </motion.p>
             </div>
 
             <div className='projects-dropdown-menu'>

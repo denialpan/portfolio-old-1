@@ -9,7 +9,7 @@ function Blender() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ ease: "easeInOut", duration: 0.7 }}>
+            transition={{ ease: "easeInOut", duration: 0.2 }}>
 
             <p> Blender Blender Blender Blender Blender Blender Blender Blender Blender Blender Blender Blender Blender Blender Blender  </p>
 

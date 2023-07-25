@@ -4,25 +4,30 @@ img {
     animation-fill-mode: forwards;
 }
 
+.svg-right-icons {
+    float: right;
+    filter: invert(100%);
+    cursor: pointer;
+}
+
 .about-container {
     position: absolute;
     left: 20%;
     right: 20%;
-    top: 15%;
+    top: 12%;
     
 }
 
 .about-description {
 
     opacity: 1;
-    font-size: 25px;
+    font-size: 20px;
     text-align: left;
     word-wrap: break-word;
     white-space: pre-line;
     margin-left: 350px;
 
 }
-
 
 .pfp {
     opacity: 0;
