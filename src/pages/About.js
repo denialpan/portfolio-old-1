@@ -27,7 +27,7 @@ function About() {
                 
                 <p> Today, I am majoring in Computer Science at Georgia Tech, where not only do I have the opportunity to learn from the best people in the industry, but also harness my skill and desire to create software in a clean and efficient way that creates a seamless user experience. </p>
                 
-                <p> You can learn more about my experience on my resume, or visit my project page to see quick and detailed previews of what I am currently working on. </p>
+                <p> You can learn more about my experience on my resume, or visit my project page to see quick and detailed previews of what I am currently working on! </p>
                 
             </div>
 

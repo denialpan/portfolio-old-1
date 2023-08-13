@@ -9,95 +9,130 @@ import Tweak from './projectPages/Tweak'
 import Blender from './projectPages/Blender'
 import GBA from './projectPages/GBA';
 
-function displayContent(param) {
-
-    switch (param) {
-        case "iOS Tweak Development":
-            return <Tweak key="Tweak" />
-        case "Blender":
-            return <Blender key="Blender" />
-        case "GBA":
-            return <GBA key="GBA" />
-        default:
-            return null;
-    }
-
-}
-
 function Projects() {
 
     const [projectContent, setProjectContent] = useState("Tap me");
     const [mobileDropdown, setMobileDropdown] = useState(false);
+
     const projects = ["iOS Tweak Development", "Blender", "GBA"];
     const menuItems = [];
-    
+
     for (let i = 0; i < 3; i++) {
         if (projects[i] !== projectContent) {
             menuItems.push(<p onClick={() => setProjectContent(`${projects[i]}`)}> {projects[i]} </p>)
         }
     }
 
-
     const toggleDropdownMenu = () => {
         setMobileDropdown(!mobileDropdown);
     }
 
+    const displayContent = (param) => {
+
+        switch (param) {
+            case "iOS Tweak Development":
+                return <Tweak key="Tweak" lightbox={toggleLightbox} getImage={getImage}/>
+            case "Blender":
+                return <Blender key="Blender" />
+            case "GBA":
+                return <GBA key="GBA" />
+            default:
+                return null;
+        }
+
+    }
+    
+    
+    const [lightbox, setLightbox] = useState(false);
+    const toggleLightbox = () => {
+        setLightbox(!lightbox);
+        console.log("IMAGE CLICKED");
+    }
+    const [image, setImage] = useState(null);
+    const getImage = (i) => {
+        setImage(i);
+        console.log("GOT IMAGE");
+    }
+
     return (
-        <motion.div className='projects-container' initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+        <>
+            <AnimatePresence>
 
-            <div className='mobile-menu'> <NavigationMobile /> </div>
-            <div className='desktop-menu'> <NavigationDesktop /> </div>
+                {lightbox && (
+                    <motion.div className="lightbox"
+                        onClick={toggleLightbox}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ ease: "easeInOut", duration: 0.2 }}> 
 
-            <div className='projects-quick-description'>
-                <p>
-                    This page lists current projects that I have finished or am currently working on. Select each one below to learn more!
-                </p>
-            </div>
+                        
+                        <img className="lightbox-image" src={image} alt="bobby SOHOS" />
+                    
+                    
+                    </motion.div>
+                )}
 
-            <div className='projects-sidebar'>
-                <motion.p whileHover={{ cursor: "pointer", scale: 1.07, backgroundColor: "rgba(255,255,255,0.1)" }} whileTap={{ scale: 1 }} onClick={() => setProjectContent("iOS Tweak Development")}> iOS Tweak Development </motion.p>
-                <motion.p whileHover={{ cursor: "pointer", scale: 1.07, backgroundColor: "rgba(255,255,255,0.1)" }} whileTap={{ scale: 1 }} onClick={() => setProjectContent("Blender")}> Blender </motion.p>
-                <motion.p whileHover={{ cursor: "pointer", scale: 1.07, backgroundColor: "rgba(255,255,255,0.1)" }} whileTap={{ scale: 1 }} onClick={() => setProjectContent("GBA")}> GBA Game </motion.p>
-            </div>
+            </AnimatePresence>
 
-            <div className='projects-dropdown-menu'>
+            <motion.div className='projects-container' initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
 
-                <motion.div className='menu-dropdown-button'
-                    onClick={toggleDropdownMenu}
-                    whileTap={{ scale: 0.95 }}>
-                    {`${projectContent}`}   
-                </motion.div>
+                <div className='mobile-menu'> <NavigationMobile /> </div>
+                <div className='desktop-menu'> <NavigationDesktop /> </div>
 
-                <AnimatePresence>
-                    {mobileDropdown && (
+                <div className='projects-quick-description'>
+                    <p> <b> This page lists current projects that I have finished or am currently working on. Select each one below to learn more! </b> </p>
+                </div>
 
-                        <motion.div className='menu-dropdown-items'
-                            onClick={toggleDropdownMenu}
-                            initial={{ opacity: 0, height: 0, padding: 0, marginTop: 0}}
-                            animate={{ opacity: 1, height: menuItems.length * 29, padding: 5, marginTop: 5}}
-                            exit={{ opacity: 0, height: 0, padding: 0, marginTop: 0}}
-                            transition={{ ease: "easeInOut", duration: 0.3 }}>
-                            
-                            {menuItems}
+                <div className='projects-sidebar'>
+                    <motion.p whileHover={{ cursor: "pointer", backgroundColor: "rgba(255,255,255,0.1)" }} onClick={() => setProjectContent("iOS Tweak Development")}> iOS Tweak Development </motion.p>
+                    <motion.p whileHover={{ cursor: "pointer", backgroundColor: "rgba(255,255,255,0.1)" }} onClick={() => setProjectContent("Blender")}> Blender </motion.p>
+                    <motion.p whileHover={{ cursor: "pointer", backgroundColor: "rgba(255,255,255,0.1)" }} onClick={() => setProjectContent("GBA")}> GBA Game </motion.p>
+                </div>
 
-                        </motion.div>
+                <hr class="vertical" />
 
-                    )}
-                </AnimatePresence>
+                <div className='projects-dropdown-menu'>
 
-            </div>
+                    <motion.div className='menu-dropdown-button'
+                        onClick={toggleDropdownMenu}
+                        whileTap={{ scale: 0.95 }}>
+                        {`${projectContent}`}
+                    </motion.div>
 
-            <div className='projects-display-container'>
-                <AnimatePresence mode="wait">
+                    <AnimatePresence>
+                        {mobileDropdown && (
 
-                    {displayContent(projectContent)}
+                            <motion.div className='menu-dropdown-items'
+                                onClick={toggleDropdownMenu}
+                                initial={{ opacity: 0, height: 0, padding: 0, marginTop: 0 }}
+                                animate={{ opacity: 1, height: menuItems.length * 29, padding: 5, marginTop: 5 }}
+                                exit={{ opacity: 0, height: 0, padding: 0, marginTop: 0 }}
+                                transition={{ ease: "easeInOut", duration: 0.3 }}>
 
-                </AnimatePresence>
-            </div>
+                                {menuItems}
+
+                            </motion.div>
+
+                        )}
+                    </AnimatePresence>
+
+                </div>
+
+                <div id='projects-display-container' className='projects-display-container'>
+                    <AnimatePresence mode="wait">
+
+                        {displayContent(projectContent)}
+
+                    </AnimatePresence>
+                </div>
+
+            </motion.div>
 
 
+        </>
 
-        </motion.div>
+
     )
 }
 

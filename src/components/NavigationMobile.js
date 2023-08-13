@@ -30,7 +30,7 @@ export default function Navigation() {
 
                         <motion.div
                             initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: 230 }}
+                            animate={{ opacity: 1, height: 270 }}
                             exit={{ opacity: 0, height: 0 }}
                             transition={{ ease: "easeInOut", duration: 1 }}>
 
@@ -40,6 +40,7 @@ export default function Navigation() {
                                 <li><Link to="/about">About</Link></li>
                                 <li><Link to="/projects">Projects</Link></li>
                                 <li><Link to="/blog">Blog</Link></li>
+                                <li><Link to="https://raw.githubusercontent.com/denialpan/portfolio/e12d72e76df82d26bf3e11d32789cb6a81767a81/src/Daniel%20Pan%20-%20Resume.pdf" target="_blank" >Resume</Link></li>
 
                             </ul>
 

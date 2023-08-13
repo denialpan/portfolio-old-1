@@ -22,11 +22,11 @@ function Home() {
             <p className='home-description'> {text3} </p>
 
             <p className='home-description center-all-of-this'> 
-
-                
+      
                 <span><Link to="/about">About</Link></span>
                 <span><Link to="/projects">Projects</Link></span>
                 <span><Link to="/blog">Blog</Link></span>
+                <span><Link to="https://raw.githubusercontent.com/denialpan/portfolio/e12d72e76df82d26bf3e11d32789cb6a81767a81/src/Daniel%20Pan%20-%20Resume.pdf" target="_blank" >Resume</Link></span>              
                 
             </p>
 
