@@ -1,9 +1,9 @@
 import React from 'react'
 import { motion } from "framer-motion";
 import { Link } from 'react-router-dom'
-import doabarrelwall from '/portfolio/src/images/tweak/doabarrelwall.png'
-import images from '/portfolio/src/images/tweak/images.png'
-import '/portfolio/src/pages/Projects.scss'
+
+import doabarrelwall from './tweakImages/doabarrelwall.png'
+import images from './tweakImages/images.png'
 
 function Tweak(props) {
 
