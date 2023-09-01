@@ -30,10 +30,13 @@ function Tweak(props) {
 
             </p>
 
-            <p> The tweak was well received by the <u><Link className="embedded-link"to="https://www.reddit.com/r/jailbreak/comments/lkafdh/free_release_doabarrelwall_change_lockscreen_and/" target="_blank" >community</Link></u>. Upon release, I got positive feedback, many downloads, and requests for new features. As time went on, I not only implemented a majority of requests, but on a deeper level, optimized the tweak to utilize less memory and load backgrounds faster. I also learned a lot from two other people well-known in the community, and with their contribution, I learned  </p>
+            <p> The tweak was well received by the <u><Link className="embedded-link"to="https://www.reddit.com/r/jailbreak/comments/lkafdh/free_release_doabarrelwall_change_lockscreen_and/" target="_blank" >community</Link></u>. Upon release, I got positive feedback, many downloads, and requests for new features. As time went on, I not only implemented a majority these requests, but on a deeper level, optimized the tweak to utilize less memory and load backgrounds faster. I also learned a lot from two other people well-known in the community, and with their contribution, I learned new methods to collaborative and joint work to implement pre-existing libraries to my current project.
+             </p>
 
-            <p> </p>
-
+            <p> Eventually, this tweak became end-of-life, due to Apple adding the feature to cycle through an album of pictures officially in iOS 16, so support for this tweak ended around iOS 15. However, I enjoyed the creation process immensely; this project was my first major project into creating something that others could use and freely experience. In the past, all of my projects have consisted to just run locally and were small tests that I would fool around with myself, so this project is a big accomplishment for me and and I'm extremely proud of what I have been able to create and the people I worked with. </p>
+            
+            <p> You can view this project on <u><Link className="embedded-link"to="https://github.com/denialpan/DoABarrelWall" target="_blank" >Github</Link></u> and my release post on <u><Link className="embedded-link"to="https://www.reddit.com/r/jailbreak/comments/lkafdh/free_release_doabarrelwall_change_lockscreen_and/" target="_blank" >Reddit</Link></u>!</p>
+            
         </motion.div>
 
     )
