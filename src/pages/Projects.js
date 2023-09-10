@@ -10,10 +10,12 @@ import Blender from './projectPages/Blender'
 import GBA from './projectPages/GBA';
 
 function Projects() {
-
+    
+    //mobile dropdown menu for projects
     const [projectContent, setProjectContent] = useState("Tap me");
     const [mobileDropdown, setMobileDropdown] = useState(false);
 
+    //implementation for dynamic dropdown menu size, future proof for additional things
     const projects = ["iOS Tweak Development", "Blender", "GBA"];
     const menuItems = [];
 
@@ -27,22 +29,7 @@ function Projects() {
         setMobileDropdown(!mobileDropdown);
     }
 
-    const displayContent = (param) => {
-
-        switch (param) {
-            case "iOS Tweak Development":
-                return <Tweak key="Tweak" lightbox={toggleLightbox} getImage={getImage}/>
-            case "Blender":
-                return <Blender key="Blender" />
-            case "GBA":
-                return <GBA key="GBA" />
-            default:
-                return null;
-        }
-
-    }
-    
-    
+    //image lightbox
     const [lightbox, setLightbox] = useState(false);
     const toggleLightbox = () => {
         setLightbox(!lightbox);
@@ -52,6 +39,30 @@ function Projects() {
     const getImage = (i) => {
         setImage(i);
         console.log("GOT IMAGE");
+    }
+    
+
+    //change content
+    const displayContent = (param) => {
+
+        switch (param) {
+            case "iOS Tweak Development":
+                return <Tweak key="Tweak" lightbox={toggleLightbox} getImage={getImage}/>
+            case "Blender":
+                return <Blender key="Blender" lightbox={toggleLightbox} getImage={getImage}/>
+            case "GBA":
+                return <GBA key="GBA" />
+            default:
+                return null;
+        }
+
+    }
+
+    const resetScrollPosition = () => {
+        document.getElementById('projects-display-container').scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
     }
 
     return (
@@ -81,10 +92,10 @@ function Projects() {
                 <div className='desktop-menu'> <NavigationDesktop /> </div>
 
                 <div className='projects-quick-description'>
-                    <p> <b> This page lists current projects that I have finished or am currently working on. Select each one below to learn more! </b> </p>
+                    <p> <b> This page lists current projects that I have finished or am currently working on, and my background in them. Select each one below to learn more! </b> </p>
                 </div>
 
-                <div className='projects-sidebar'>
+                <div className='projects-sidebar' onClick={() => resetScrollPosition()}>
                     <motion.p whileHover={{ cursor: "pointer", backgroundColor: "rgba(255,255,255,0.1)" }} onClick={() => setProjectContent("iOS Tweak Development")}> iOS Tweak Development </motion.p>
                     <motion.p whileHover={{ cursor: "pointer", backgroundColor: "rgba(255,255,255,0.1)" }} onClick={() => setProjectContent("Blender")}> Blender </motion.p>
                     <motion.p whileHover={{ cursor: "pointer", backgroundColor: "rgba(255,255,255,0.1)" }} onClick={() => setProjectContent("GBA")}> GBA Game </motion.p>
@@ -103,8 +114,11 @@ function Projects() {
                     <AnimatePresence>
                         {mobileDropdown && (
 
-                            <motion.div className='menu-dropdown-items'
-                                onClick={toggleDropdownMenu}
+                            <motion.div className='menu-dropdown-items' 
+                                onClick={() => {
+                                    resetScrollPosition();
+                                    toggleDropdownMenu();
+                                }}
                                 initial={{ opacity: 0, height: 0, padding: 0, marginTop: 0 }}
                                 animate={{ opacity: 1, height: menuItems.length * 29, padding: 5, marginTop: 5 }}
                                 exit={{ opacity: 0, height: 0, padding: 0, marginTop: 0 }}

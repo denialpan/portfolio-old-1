@@ -23,12 +23,14 @@ function Tweak(props) {
 
             <p> Up until iOS 16 was released in September 2022, there was no native way to cycle through multiple wallpapers on an iPhone, a feature that Android and Windows had decades ago. This was a frustration for me, so I went to create <b>DoABarrelWall</b>, a way to natively add this feature to set multiple homescreen and lockscreen wallpapers. </p>
 
-            <p className='center-all-of-this'>
+            <figure className='center-all-of-this'>
+                <motion.img className="tweak-images" width="200" src={doabarrelwall} alt="bobby" onClick={function() {props.lightbox(); props.getImage(doabarrelwall);}}></motion.img>
+                <motion.img className="tweak-images" width="200" src={images} alt="bobby" onClick={function() {props.lightbox(); props.getImage(images);}}></motion.img>
+                <figcaption className='image-caption'>
+                <i>Fig 1: Initial tweak landing page, with various settings for operation and performance. Fig 2: Page to add, remove, and save images to act as wallpapers to cycle through.</i> 
+                </figcaption>
                 
-            <motion.img className="tweak-images" width="200" src={doabarrelwall} alt="bobby" onClick={function() {props.lightbox(); props.getImage(doabarrelwall);}}></motion.img>
-            <motion.img className="tweak-images" width="200" src={images} alt="bobby" onClick={function() {props.lightbox(); props.getImage(images);}}></motion.img>
-
-            </p>
+            </figure>
 
             <p> The tweak was well received by the <u><Link className="embedded-link"to="https://www.reddit.com/r/jailbreak/comments/lkafdh/free_release_doabarrelwall_change_lockscreen_and/" target="_blank" >community</Link></u>. Upon release, I got positive feedback, many downloads, and requests for new features. As time went on, I not only implemented a majority these requests, but on a deeper level, optimized the tweak to utilize less memory and load backgrounds faster. I also learned a lot from two other people well-known in the community, and with their contribution, I learned new methods to collaborative and joint work to implement pre-existing libraries to my current project.
              </p>

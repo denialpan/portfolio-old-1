@@ -57,6 +57,12 @@
     border-radius: 10px;
 }
 
+.blender-images {
+    margin-inline: 15px;
+    border-radius: 10px;
+    max-width: 95%;
+}
+
 .lightbox {
     opacity: 1;
     background-color: rgba(0,0,0,0.9);
@@ -82,12 +88,22 @@
     padding: 0;
 }
 
+figcaption {
+    margin: auto;
+    max-width: 420px;
+}
+
+.image-caption {
+    font-size: 12px;
+}
+
+
+
 @media only screen and (max-width: 1000px) {
     .projects-container {
         top: 30px;
         left: 0%;
         width: 100%;
-        
     }
 
     .projects-quick-description {
@@ -130,6 +146,10 @@
     .menu-dropdown-items p {
         padding-inline: 0;
         padding-block: 5px;
+    }
+
+    .blender-images {
+        width: 90%;
     }
 
     .vertical {
