@@ -12,7 +12,7 @@ import GBA from './projectPages/GBA';
 function Projects() {
     
     //mobile dropdown menu for projects
-    const [projectContent, setProjectContent] = useState("Tap me");
+    const [projectContent, setProjectContent] = useState("iOS Tweak Development");
     const [mobileDropdown, setMobileDropdown] = useState(false);
 
     //implementation for dynamic dropdown menu size, future proof for additional things
@@ -78,7 +78,7 @@ function Projects() {
                         transition={{ ease: "easeInOut", duration: 0.2 }}> 
 
                         
-                        <img className="lightbox-image" src={image} alt="bobby SOHOS" />
+                        <img className="lightbox-image" src={image} alt="FAILED LIGHTBOX" />
                     
                     
                     </motion.div>

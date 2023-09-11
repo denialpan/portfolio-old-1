@@ -60,7 +60,6 @@
 .blender-images {
     margin-inline: 15px;
     border-radius: 10px;
-    max-width: 95%;
 }
 
 .lightbox {
@@ -88,16 +87,20 @@
     padding: 0;
 }
 
-figcaption {
-    margin: auto;
-    max-width: 420px;
-}
-
 .image-caption {
     font-size: 12px;
 }
 
+figure {
+    margin-inline: auto;
+}
 
+figcaption {
+    margin-inline: 75px;
+    animation: fadeInUp 0.7s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+}
 
 @media only screen and (max-width: 1000px) {
     .projects-container {

@@ -22,9 +22,8 @@ function Blender(props) {
             <figure className='center-all-of-this'>
                 <motion.img className="blender-images" width="600" src={camerashowcase} alt="bobby" onClick={function() {props.lightbox(); props.getImage(camerashowcase);}}></motion.img>
                 <figcaption className='image-caption'>
-                <i> inspired by the film cameras </i> 
+                <i> Model inspired by film cameras, custom driver to control light strength and hue of lens. </i>
                 </figcaption>
-                
             </figure>
 
         </motion.div>
