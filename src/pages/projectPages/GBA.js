@@ -11,7 +11,7 @@ function GBA() {
             exit={{ opacity: 0 }}
             transition={{ ease: "easeInOut", duration: 0.2 }}>
 
-            <p> GBA GBA GBA GBA GBA GBA GBA GBA </p> 
+            <p> GBA GBA GBA GBA GBA GBA GBA GBA </p>            
         
         </motion.div>
 

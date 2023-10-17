@@ -19,7 +19,7 @@ function Projects() {
     const projects = ["iOS Tweak Development", "Blender", "GBA"];
     const menuItems = [];
 
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < projects.length; i++) {
         if (projects[i] !== projectContent) {
             menuItems.push(<p onClick={() => setProjectContent(`${projects[i]}`)}> {projects[i]} </p>)
         }
