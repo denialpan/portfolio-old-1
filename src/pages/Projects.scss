@@ -68,7 +68,7 @@
     z-index:10;
 }
 
-.lightbox-image {
+.lightbox-media {
     margin:auto;
     height: 85%;
     position:fixed;
@@ -91,7 +91,7 @@ figure {
     animation: fadeInUp 0.7s;
     animation-delay: 0s;
     animation-fill-mode: forwards;
-    width: 300px;
+    width: 35%;
 }
 
 figcaption {

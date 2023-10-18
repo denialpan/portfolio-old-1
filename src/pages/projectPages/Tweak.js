@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import doabarrelwall from './tweakImages/doabarrelwall.png'
 import images from './tweakImages/images.png'
 
-function Tweak(props) {
+function Tweak({returnImage}) {
 
     return (
         
@@ -23,25 +23,16 @@ function Tweak(props) {
 
             <p> Up until iOS 16 was released in September 2022, there was no native way to cycle through multiple wallpapers on an iPhone, a feature that Android and Windows had decades ago. This was a frustration for me, so I went to create <b>DoABarrelWall</b>, a way to natively add this feature to set multiple homescreen and lockscreen wallpapers. </p>
 
-            {/* <figure className='center-all-of-this'>
-                <motion.img className="tweak-images" width="200" src={doabarrelwall} alt="bobby"></motion.img>
-                <motion.img className="tweak-images" width="200" src={images} alt="bobby"></motion.img>
-                <figcaption className='image-caption'>
-                <i>Fig 1: Initial tweak landing page, with various settings for operation and performance. Fig 2: Page to add, remove, and save images to act as wallpapers to cycle through.</i> 
-                </figcaption>
-                
-            </figure> */}
-
             <p className='center-figures'>
-                <figure>
-                    <embed className="project-images" type='image/jpg' src={doabarrelwall} width="100%" ></embed>
+                <figure onClick={function() {returnImage(doabarrelwall)}}>
+                <img id="media" className="project-images" type='image/jpg' src={doabarrelwall} width="100%"></img>
                     <figcaption>
                         <i>Initial tweak landing page, with various settings for operation and performance.</i>
                     </figcaption>
                 </figure>
 
-                <figure>
-                    <embed className="project-images" type='image/jpg' src={images} width="100%" ></embed>
+                <figure onClick={function() {returnImage(images)}}>
+                    <img id="media" className="project-images" type='image/jpg' src={images} width="100%" ></img>
                     <figcaption>
                         <i>Page to add, remove, and save images to act as wallpapers to cycle through.</i>
                     </figcaption>

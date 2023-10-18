@@ -19,17 +19,14 @@ function Blender(props) {
 
             <p> A program that I've touched before during middleschool was Blender, but I found it too complex for the purposes I had in mind at the time. The familiarity to coming back to it now is what enticed me to give a try again. This proved to be favorable, as the experience that I had working in Mastercam helped me overcome the issues I came across the first time years ago. </p>
 
-            {/* <figure className='center-all-of-this'>
-                <motion.img className="blender-images" width="600" src={camerashowcase} alt="bobby"></motion.img>
-                <figcaption className='image-caption'>
-                <i> Model inspired by film cameras, custom driver to control light strength and hue of lens. </i>
-                </figcaption>
-            </figure> */}
-
             <p className='center-figures'>
                 <figure>
-                    <embed>  </embed>
+                    <img id="media" className="project-images" type='image/jpg' src={camerashowcase} width="100%" ></img>
+                    <figcaption>
+                        <i>Model inspired by film cameras, custom driver to control light strength and hue of lens.</i>
+                    </figcaption>
                 </figure>
+
             </p>
 
         </motion.div>

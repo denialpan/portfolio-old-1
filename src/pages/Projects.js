@@ -8,9 +8,10 @@ import NavigationDesktop from '../components/NavigationDesktop';
 import Tweak from './projectPages/Tweak'
 import Blender from './projectPages/Blender'
 import GBA from './projectPages/GBA';
+import { type } from '@testing-library/user-event/dist/type';
 
 function Projects() {
-    
+
     //mobile dropdown menu for projects
     const [projectContent, setProjectContent] = useState("iOS Tweak Development");
     const [mobileDropdown, setMobileDropdown] = useState(false);
@@ -34,7 +35,7 @@ function Projects() {
 
         switch (param) {
             case "iOS Tweak Development":
-                return <Tweak key="Tweak" />
+                return <Tweak key="Tweak" returnImage={imageClicked}/>
             case "Blender":
                 return <Blender key="Blender" />
             case "GBA":
@@ -45,6 +46,27 @@ function Projects() {
 
     }
 
+    const [showLightbox, setShowLightbox] = useState(false);
+    const [media, setMedia] = useState(null);
+
+    const imageClicked = (i) => {
+        console.log("IMAGE CLICKED " + i);
+        setShowLightbox(true);
+        setMedia(i);
+        console.log(media)
+    }
+
+    const typeOfMedia = () => {
+        var re = /(?:\.([^.]+))?$/;
+        var extension = re.exec(media)[1];
+        if (extension === "png") {
+            return <img className="lightbox-media" src={media}></img>
+        } else if (extension === "mp4") {
+            return <video className="lightbox-media" src={media}></video>
+        }
+    }
+
+    //reset to top
     const resetScrollPosition = () => {
         document.getElementById('projects-display-container').scrollTo({
             top: 0,
@@ -56,9 +78,24 @@ function Projects() {
         <>
             <AnimatePresence>
 
+                {showLightbox && (
+                    <motion.div className='lightbox' 
+                        initial={{ opacity: 0 }} 
+                        animate={{ opacity: 1 }} 
+                        exit={{ opacity: 0 }}
+                        onClick={function() {setShowLightbox(false)}}>                 
+
+                        {typeOfMedia()}
+
+                    </motion.div>
+                )}
+
             </AnimatePresence>
 
-            <motion.div className='projects-container' initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <motion.div className='projects-container' 
+                initial={{ opacity: 0 }} 
+                animate={{ opacity: 1 }} 
+                exit={{ opacity: 0 }}>
 
                 <div className='mobile-menu'> <NavigationMobile /> </div>
                 <div className='desktop-menu'> <NavigationDesktop /> </div>
