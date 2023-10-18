@@ -12,7 +12,7 @@ function NavigationDesktop() {
             <span> <Link to="/about">About</Link> </span>
             <span> <Link to="/projects">Projects</Link> </span>
             <span> <Link to="/blog">Blog</Link> </span>
-            <span> <Link to="https://raw.githubusercontent.com/denialpan/portfolio/e12d72e76df82d26bf3e11d32789cb6a81767a81/src/Daniel%20Pan%20-%20Resume.pdf" target="_blank" >Resume</Link> </span>
+            <span> <Link to="https://raw.githubusercontent.com/denialpan/portfolio/49e2aad7642935c975cd3f5987d8a5c426c1481d/src/Daniel%20Pan%20-%20Resume.pdf" target="_blank" >Resume</Link> </span>
 
             {/* <span className="svg-right-icons"> <Link to="https://www.reddit.com/user/dern123"> <img src={redditIcon} alt="reddit"></img> </Link> </span> */}
             <span className="svg-right-icons"> <Link to="https://www.facebook.com/danpan123/"> <img src={facebookIcon} alt="facebook"></img> </Link> </span>
