@@ -1,9 +1,10 @@
 .projects-container {
 
-    position: absolute;
+    position: fixed;
     left: 20%;
     right: 20%;
     top: 12%;
+    height: 70%;
 
 }
 
@@ -36,8 +37,8 @@
     white-space: pre-line;
     margin-left: 210px;
     font-size: 20px;
-    height: 600px;
-    overflow-y: auto;
+    height: 100%;
+    overflow-y: scroll;
 
     -webkit-mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
     mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
@@ -52,14 +53,7 @@
     display: block;
 }
 
-.tweak-images {
-    margin-inline: 15px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-}
-
-.blender-images {
-    margin-inline: 15px;
+.project-images {
     border-radius: 10px;
 }
 
@@ -93,15 +87,20 @@
 }
 
 figure {
-    margin-inline: auto;
-    float: left;
-}
-
-figcaption {
-    margin-inline: 75px;
+    margin-inline: 20px;
     animation: fadeInUp 0.7s;
     animation-delay: 0s;
     animation-fill-mode: forwards;
+    width: 300px;
+}
+
+figcaption {
+    font-size: 14px;
+}
+
+.center-figures {
+    display: flex;
+    justify-content: center;
 }
 
 @media only screen and (max-width: 1000px) {
