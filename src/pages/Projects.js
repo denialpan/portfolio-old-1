@@ -29,27 +29,14 @@ function Projects() {
         setMobileDropdown(!mobileDropdown);
     }
 
-    //image lightbox
-    const [lightbox, setLightbox] = useState(false);
-    const toggleLightbox = () => {
-        setLightbox(!lightbox);
-        console.log("IMAGE CLICKED");
-    }
-    const [image, setImage] = useState(null);
-    const getImage = (i) => {
-        setImage(i);
-        console.log("GOT IMAGE");
-    }
-    
-
     //change content
     const displayContent = (param) => {
 
         switch (param) {
             case "iOS Tweak Development":
-                return <Tweak key="Tweak" lightbox={toggleLightbox} getImage={getImage}/>
+                return <Tweak key="Tweak" />
             case "Blender":
-                return <Blender key="Blender" lightbox={toggleLightbox} getImage={getImage}/>
+                return <Blender key="Blender" />
             case "GBA":
                 return <GBA key="GBA" />
             default:
@@ -68,21 +55,6 @@ function Projects() {
     return (
         <>
             <AnimatePresence>
-
-                {lightbox && (
-                    <motion.div className="lightbox"
-                        onClick={toggleLightbox}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ ease: "easeInOut", duration: 0.2 }}> 
-
-                        
-                        <img className="lightbox-image" src={image} alt="FAILED LIGHTBOX" />
-                    
-                    
-                    </motion.div>
-                )}
 
             </AnimatePresence>
 

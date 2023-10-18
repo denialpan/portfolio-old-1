@@ -24,8 +24,8 @@ function Tweak(props) {
             <p> Up until iOS 16 was released in September 2022, there was no native way to cycle through multiple wallpapers on an iPhone, a feature that Android and Windows had decades ago. This was a frustration for me, so I went to create <b>DoABarrelWall</b>, a way to natively add this feature to set multiple homescreen and lockscreen wallpapers. </p>
 
             <figure className='center-all-of-this'>
-                <motion.img className="tweak-images" width="200" src={doabarrelwall} alt="bobby" onClick={function() {props.lightbox(); props.getImage(doabarrelwall);}}></motion.img>
-                <motion.img className="tweak-images" width="200" src={images} alt="bobby" onClick={function() {props.lightbox(); props.getImage(images);}}></motion.img>
+                <motion.img className="tweak-images" width="200" src={doabarrelwall} alt="bobby"></motion.img>
+                <motion.img className="tweak-images" width="200" src={images} alt="bobby"></motion.img>
                 <figcaption className='image-caption'>
                 <i>Fig 1: Initial tweak landing page, with various settings for operation and performance. Fig 2: Page to add, remove, and save images to act as wallpapers to cycle through.</i> 
                 </figcaption>
