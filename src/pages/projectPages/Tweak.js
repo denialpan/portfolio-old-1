@@ -25,14 +25,14 @@ function Tweak({returnImage}) {
 
             <p className='center-figures'>
                 <figure onClick={function() {returnImage(doabarrelwall)}}>
-                <img id="media" className="project-images" type='image/jpg' src={doabarrelwall} width="100%"></img>
+                <img id="media" className="project-images" type='image/jpg' src={doabarrelwall} width="100%" alt="doabarrelwall"></img>
                     <figcaption>
                         <i>Initial tweak landing page, with various settings for operation and performance.</i>
                     </figcaption>
                 </figure>
 
                 <figure onClick={function() {returnImage(images)}}>
-                    <img id="media" className="project-images" type='image/jpg' src={images} width="100%" ></img>
+                    <img id="media" className="project-images" type='image/jpg' src={images} width="100%" alt="images"></img>
                     <figcaption>
                         <i>Page to add, remove, and save images to act as wallpapers to cycle through.</i>
                     </figcaption>

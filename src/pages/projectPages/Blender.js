@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 import camerashowcase from './blenderImages/camera showcase.gif'
 
-function Blender(props) {
+function Blender({returnImage}) {
     return (
         
         <motion.div 
@@ -20,13 +20,12 @@ function Blender(props) {
             <p> A program that I've touched before during middleschool was Blender, but I found it too complex for the purposes I had in mind at the time. The familiarity to coming back to it now is what enticed me to give a try again. This proved to be favorable, as the experience that I had working in Mastercam helped me overcome the issues I came across the first time years ago. </p>
 
             <p className='center-figures'>
-                <figure>
-                    <img id="media" className="project-images" type='image/jpg' src={camerashowcase} width="100%" ></img>
+                <figure onClick={function() {returnImage(camerashowcase)}}>
+                    <img id="media" className="project-images" type='image/jpg' src={camerashowcase} width="100%" alt="camera showcase"></img>
                     <figcaption>
                         <i>Model inspired by film cameras, custom driver to control light strength and hue of lens.</i>
                     </figcaption>
                 </figure>
-
             </p>
 
         </motion.div>

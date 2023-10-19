@@ -8,7 +8,6 @@ import NavigationDesktop from '../components/NavigationDesktop';
 import Tweak from './projectPages/Tweak'
 import Blender from './projectPages/Blender'
 import GBA from './projectPages/GBA';
-import { type } from '@testing-library/user-event/dist/type';
 
 function Projects() {
 
@@ -37,9 +36,9 @@ function Projects() {
             case "iOS Tweak Development":
                 return <Tweak key="Tweak" returnImage={imageClicked}/>
             case "Blender":
-                return <Blender key="Blender" />
+                return <Blender key="Blender" returnImage={imageClicked}/>
             case "GBA":
-                return <GBA key="GBA" />
+                return <GBA key="GBA" returnImage={imageClicked}/>
             default:
                 return null;
         }
@@ -59,10 +58,10 @@ function Projects() {
     const typeOfMedia = () => {
         var re = /(?:\.([^.]+))?$/;
         var extension = re.exec(media)[1];
-        if (extension === "png") {
-            return <img className="lightbox-media" src={media}></img>
+        if (extension === "png" || "gif") {
+            return <img className="lightbox-media" alt="lightbox img" src={media}/>
         } else if (extension === "mp4") {
-            return <video className="lightbox-media" src={media}></video>
+            return <video className="lightbox-media" src={media}/>
         }
     }
 
