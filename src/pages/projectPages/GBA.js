@@ -1,11 +1,34 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { railscasts } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+
+
 import GBAGame from './gbaImages/GBA.mp4'
 import GBAGameThumbnail from './gbaImages/GBAThumbnail.png'
 
-function GBA() {
-    return (
+export const codeString = `
+//start game
+if (KEY_JUST_PRESSED(BUTTON_START)) {
+    
+    //reset blank counter for VSync
+    vBlankCounter = 0;
+    state = PLAY;
 
+    drawFullScreenImageDMA(tetrisGameBackground); //background image
+
+    drawImageDMA(PLAYERICON_WIDTH, PLAYERICON_HEIGHT, playerIcon);
+    drawImageDMA(PLAYERICON_WIDTH, PLAYERICON_HEIGHT, playerIcon);
+}
+
+`.trim();
+
+function GBA() {
+
+    
+    return (
+        
         <motion.div 
             key="GBA"
             initial={{ opacity: 0 }}
@@ -30,7 +53,15 @@ function GBA() {
             
             <p> A major optimization was the drawing of graphics on the screen. Traditionally, processing power is fast enough for each pixel on a screen to be redrawn quizkly, even if the color is the same. However, this is not a luxury that a gameboy has. If a gameboy were to redraw every frame in its entirety, it would cause visual tearing in places where the screen has yet to finish drawing. This problem can be avoided if we know what pixels do not need to be redrawn.</p>
 
-            <p> For how I implemented my game, there is a full background image with subtle  </p>
+            <p> There is a subtle background image that remains static during gameplay. Redrawing the entire background would be a huge waste, since the only dynamic thing on the scene is just player movement. This was one way for me to optmize my game, where only the near pixels around the player were set to be redrawn instead. This allowed player movement to be smooth at 60 FPS. </p>
+
+            <p> Code-wise, there were specifics needed in what/the area to draw, such as a single pixel, a rectangle of pixels, and text, and also undrawing portions of the display, primarily used by player movement to redraw the background. The implementation of these methods I won't show for course confidentiality, but the usage of these methods to draw elements on the screen is interesting: </p>
+
+            <p>
+                <figure><SyntaxHighlighter language="c" style={railscasts}>{codeString}</SyntaxHighlighter>
+                <figcaption><i>Code snippet description ill add something here</i> </figcaption>
+                </figure>
+            </p>
 
             <p></p>
             <p></p>
