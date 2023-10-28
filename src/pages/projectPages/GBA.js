@@ -8,16 +8,14 @@ import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import GBAGame from './gbaImages/GBA.mp4'
 import GBAGameThumbnail from './gbaImages/GBAThumbnail.png'
 
-export const codeString = `
+export const code1 = `
 //start game
 if (KEY_JUST_PRESSED(BUTTON_START)) {
     
-    vBlankCounter = 0;             //reset blank counter for VSync
-    state = PLAY;                  //change game state to playing
+    vBlankCounter = 0;                             //reset blank counter for VSync
 
-    drawFullScreenImageDMA(tetrisGameBackground); //background image
-
-    drawImageDMA(PLAYERICON_WIDTH, PLAYERICON_HEIGHT, playerIcon); //draw player
+    drawFullScreenImageDMA(tetrisGameBackground);          // drawbackground image
+    drawImageDMA(PLAYERICON_WIDTH, PLAYERICON_HEIGHT, playerIcon);  // draw player
 }
 
 `.trim();
@@ -42,7 +40,7 @@ function GBA() {
                 <figure>
                     <video id="media" className="project-images" src={GBAGame} poster={GBAGameThumbnail} width="100%" controls preload='all'></video>
                     <figcaption>
-                        <i> Video of the gameboy game I made, showcased in an emulator. Graphics and objective heavily inspired by Tetris of clearing lines. </i>
+                        <i> Video of the gameboy game I made, showcased in an emulator. Graphics and objective heavily inspired by Tetris and clearing lines, just horizontally instead of vertically. </i>
                     </figcaption>
                 </figure>
             </p>
@@ -53,10 +51,10 @@ function GBA() {
 
             <p> There is a subtle background image that remains static during gameplay. Redrawing the entire background would be a huge waste, since the only dynamic thing on the scene is just player movement. This was one way for me to optmize my game, where only the near pixels around the player were set to be redrawn instead. This allowed player movement to be smooth at 60 FPS. </p>
 
-            <p> Code-wise, there were specifics needed in what/the area to draw, such as a single pixel, a rectangle of pixels, and text, and also undrawing portions of the display, primarily used by player movement to redraw the background. The implementation of these methods I won't show for course confidentiality, but the usage of these methods to draw elements on the screen is interesting: </p>
+            <p> Code-wise, there were specifics needed in what/the area to draw, such as a single pixel, a rectangle of pixels, and text, and also undrawing portions of the display, primarily used by player movement to redraw the background. When these methods are combined, the drawing of graphics is trivial when just thought as layers on a canvas. </p>
 
             <p>
-                <figure><SyntaxHighlighter language="c" style={oneDark}>{codeString}</SyntaxHighlighter>
+                <figure><SyntaxHighlighter language="c" style={oneDark}>{code1}</SyntaxHighlighter>
                 <figcaption><i>Code snippet description ill add something here</i> </figcaption>
                 </figure>
             </p>
