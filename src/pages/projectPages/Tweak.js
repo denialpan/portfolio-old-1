@@ -5,6 +5,25 @@ import { Link } from 'react-router-dom'
 import doabarrelwall from './tweakImages/doabarrelwall.png'
 import images from './tweakImages/images.png'
 
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+export const hooking = `
+//get update events on device lock - Lockscreen
+%hook SBLockScreenManager
+    - (void)lockUIFromSource:(int)arg1 withOptions:(id)arg2 completion:(id)arg3 {
+        
+        %orig;      // perform original code as intended by Apple
+
+        updateWallpaperForLocation(kLockScreen);
+        if (disableChangeOnAppExit)
+            updateWallpaperForLocation(kHomeScreen);
+
+        // ... other code I need to run while this class is called
+    }
+%end
+`.trim();
+
 function Tweak({returnImage}) {
 
     return (
@@ -36,6 +55,23 @@ function Tweak({returnImage}) {
                     <figcaption>
                         <i>Page to add, remove, and save images to act as wallpapers to cycle through.</i>
                     </figcaption>
+                </figure>
+            </p>
+
+            <p> The tweak itself is functionality simple, but there was much I was walking into blind; the prerequisites for tweak development was largely centered on already owning macOS products that would give access to Xcode and easy debugging. However, because I firmly prefer Windows over macOS, much of these perks that other tweak developers had I was not able to experience. As such, much of this code had to be written with tedious ways to debug that would otherwise be redundant if I had a Apple computer. </p>
+
+            <p> Thankfully, much of the code from iOS versions 13 - 15 predominantly stayed the same, so whatever code I wrote on my iPhone XR, iOS 13 could be ran flawlessly on a much newer model on iOS 15. </p>
+
+            <p> For me to run my own code, I had to hook onto existing classes. For example, if I wanted the wallpaper to change when the device screen was put to sleep, I would have to hook into the function class that Apple created and add my own code. </p>
+
+            <p>
+                <figure><SyntaxHighlighter language="swift" customStyle={{
+                    fontSize: 16,
+                    padding: 10,
+                    margin: 0,
+                    borderRadius: 10
+                    }} style={oneDark}>{hooking}</SyntaxHighlighter>
+                    <figcaption><i> right now this is the latest and you need to add a caption for this code </i> </figcaption>
                 </figure>
             </p>
 
