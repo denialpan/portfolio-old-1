@@ -1,9 +1,9 @@
 .projects-container {
 
     position: fixed;
-    left: 20%;
-    right: 20%;
-    top: 12%;
+    left: 12%;
+    right: 12%;
+    top: 7%;
     height: 70%;
 
 }
@@ -87,7 +87,8 @@
 }
 
 figure {
-    margin-inline: 20px;
+    margin-bottom: 8px;
+    margin-inline: 8px;
     animation: fadeInUp 0.7s;
     animation-delay: 0s;
     animation-fill-mode: forwards;
@@ -100,6 +101,20 @@ figcaption {
 .center-figures {
     display: flex;
     justify-content: center;
+    
+}
+
+.portrait-media{
+    border-radius: 10px;
+    margin-inline: auto;
+    padding-inline: 100px;
+    max-width: 50%;
+}
+
+.landscape-media {
+    border-radius: 10px;
+    margin-inline: auto;
+    padding-inline: 100px;
 }
 
 @media only screen and (max-width: 1000px) {
