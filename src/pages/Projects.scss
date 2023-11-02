@@ -1,10 +1,12 @@
 .projects-container {
 
     position: fixed;
-    left: 12%;
-    right: 12%;
-    top: 7%;
+    left: 2%;
+    right: 2%;
+    margin-inline: auto;
+    top: 5%;
     height: 70%;
+    max-width: 1900px;
 
 }
 
@@ -49,10 +51,6 @@
     display: none;
 }
 
-.vertical {
-    display: block;
-}
-
 .project-images {
     border-radius: 10px;
 }
@@ -87,11 +85,12 @@
 }
 
 figure {
-    margin-bottom: 8px;
+    margin-block: 0px;
     margin-inline: 8px;
     animation: fadeInUp 0.7s;
     animation-delay: 0s;
     animation-fill-mode: forwards;
+    margin-bottom: 8px;
 }
 
 figcaption {
@@ -101,7 +100,7 @@ figcaption {
 .center-figures {
     display: flex;
     justify-content: center;
-    
+    flex-wrap: wrap;
 }
 
 .portrait-media{
@@ -172,6 +171,11 @@ figcaption {
 
     .vertical {
         display: none;
+    }
+
+    figure {
+        max-width: 100%;
+        width: 100%;
     }
 
 }
