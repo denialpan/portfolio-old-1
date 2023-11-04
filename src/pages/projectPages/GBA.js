@@ -112,14 +112,6 @@ function GBA() {
             <p></p>
             <p></p>
             <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            
-
 
         </motion.div>
 
