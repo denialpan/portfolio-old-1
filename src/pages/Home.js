@@ -5,11 +5,11 @@ import './Home.scss'
   
 function Home() {
 
-    const text1 = 'Hello! I am a 20 year old computer science major currently studying at the Georgia Institute of Technology. I have a lot of experience in efficient programming practices for various data structures in multiple languages. ';
+    const text1 = 'Hello! This is what would have been the landing page for my first portfolio, but after spending almost half a year on this, I realized I never liked it in the beginning. This portfolio has not been published before, as it was never finished in my eyes.';
 
-    const text2 = "I also have an active hobby in 3D animation and simulation, along with minimalistic UI design, like this portfolio right here!"
+    const text2 = "However, all the content that I've had here can be still explored, as I value archiving progress, and this first iteration of my portfolio is where I learned a majority of React, CSS, and HTML."
 
-    const text3 = "If any of this interests you, have a look around!"
+    const text3 = "If any of this interests you, have a look around! Everything except this page is exactly how I left it before I decided to restart from scratch."
 
     return (
 
