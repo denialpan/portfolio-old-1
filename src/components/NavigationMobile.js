@@ -12,7 +12,7 @@ export default function Navigation() {
         setHamburger(!hamburger);
     }
 
- 
+
 
 
     return (
@@ -40,7 +40,7 @@ export default function Navigation() {
                                 <li><Link to="/about">About</Link></li>
                                 <li><Link to="/projects">Projects</Link></li>
                                 <li><Link to="/blog">Blog</Link></li>
-                                <li><Link to="https://raw.githubusercontent.com/denialpan/portfolio/49e2aad7642935c975cd3f5987d8a5c426c1481d/src/Daniel%20Pan%20-%20Resume.pdf" target="_blank" >Resume</Link></li>
+                                <li><Link to="https://denialpan.github.io/portfolio/" target="_blank" >Resume</Link></li>
 
                             </ul>
 
@@ -48,7 +48,7 @@ export default function Navigation() {
                     )}
                 </AnimatePresence>
             </div>
-  
+
         </div>
     )
 }
